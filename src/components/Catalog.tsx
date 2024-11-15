@@ -1,17 +1,19 @@
 "use client";
-import { Card, Col, Row, Button, Modal } from "antd";
-import { CarOutlined, WhatsAppOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
+import { WhatsAppOutlined } from "@ant-design/icons";
+import { Modal, Button, Typography, Row, Col } from "antd";
 
 interface Car {
   name: string;
-  otr: string; // OTR price
-  dp: string; // Down payment price
+  otr: string; // Harga OTR
+  dp: string; // Harga Down Payment
   image: string;
   description: string;
   specs: string;
-  detailImages: string[]; // Array for multiple images of the car
+  detailImages: string[]; // Array untuk beberapa gambar mobil
 }
+
+const { Title, Text } = Typography;
 
 const Catalog: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -130,7 +132,7 @@ const Catalog: React.FC = () => {
       image:
         "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
       description:
-        "Honda Odyssey adalah minivan ramah keluarga dengan kenyamanan luar biasa dan kursi yang dapat disesuaikan.",
+        "Honda Odyssey adalah MPV premium dengan interior luas dan fitur-fitur canggih.",
       specs: "Mesin: 3.5L V6, Daya: 280 hp, Transmisi: 9-speed Otomatis",
       detailImages: [
         "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
@@ -141,8 +143,10 @@ const Catalog: React.FC = () => {
   ];
 
   const showModal = (car: Car) => {
-    setCurrentCar(car);
-    setIsModalVisible(true);
+    if (!isModalVisible) {
+      setCurrentCar(car);
+      setIsModalVisible(true);
+    }
   };
 
   const handleCancel = () => {
@@ -150,100 +154,161 @@ const Catalog: React.FC = () => {
   };
 
   return (
-    <section id="catalog" className="py-16 bg-gray-50">
-      <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8">Katalog Kami</h2>
-        <Row gutter={[16, 16]} className="mt-8">
-          {cars.map((car, index) => (
-            <Col key={index} xs={24} sm={12} md={8} lg={6}>
-              <Card
-                hoverable
-                cover={
-                  <div className="relative overflow-hidden rounded-lg">
-                    <img
-                      alt={car.name}
-                      src={car.image}
-                      className="w-full h-64 object-cover transform transition-transform duration-300 hover:scale-105"
-                    />
-                    <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-20 rounded-lg"></div>
-                  </div>
-                }
-                className="shadow-md hover:shadow-xl transition-shadow duration-300 bg-white rounded-lg"
-                bodyStyle={{ padding: "16px" }}
-              >
-                <div className="text-xl font-semibold text-gray-900 hover:text-gray-800 transition-colors duration-200">
-                  {car.name}
-                </div>
-                <div className="text-lg text-gray-600 mt-2">OTR: {car.otr}</div>
-                <div className="text-lg text-gray-600 mt-1">
-                  DP mulai dari: {car.dp}
-                </div>
+    <div className="overflow-hidden md:px-8">
+      {/* Judul dan Subjudul */}
+      <div className="text-center mb-10 my-8 px-4 sm:px-6 md:px-8">
+        <Title
+          level={2}
+          className="text-[#2c3e50] text-2xl sm:text-4xl md:text-4xl"
+        >
+          Temukan Mobil Impian Anda Sekarang!
+        </Title>
+        <Text className="text-sm sm:text-lg  md:text-xl text-[#7f8c8d]">
+          Dapatkan Penawaran Terbaik dengan Harga OTR Terjangkau dan DP Ringan.
+          Pilih Mobil Anda dan Hubungi Kami untuk Info Lebih Lanjut!
+        </Text>
+      </div>
 
-                <div className="mt-4 space-y-3">
+      {/* Katalog Mobil */}
+      <Row gutter={[16, 16]} justify="center" className="bg-[#fafafa] p-5">
+        {cars.map((car, index) => (
+          <Col key={index} xs={24} sm={12} md={8} lg={6}>
+            <div
+              className="relative rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 ease-in-out mb-5 cursor-pointer"
+              onClick={() => showModal(car)}
+            >
+              <img
+                alt={car.name}
+                src={car.image}
+                className="w-full h-64 object-cover rounded-t-lg"
+              />
+              <div className="p-4 text-center bg-white rounded-b-lg">
+                <Title level={4} className="text-lg mb-2">
+                  {car.name}
+                </Title>
+                <Text strong className="text-red-600 text-md">
+                  {`OTR ${car.otr}`}
+                </Text>
+                <div className="mt-2 text-gray-500">
+                  <Text className="text-sm">{`DP mulai dari ${car.dp}`}</Text>
+                </div>
+                <div className="mt-4 flex flex-col md:flex-row gap-2 justify-center">
                   <Button
-                    key="info"
-                    type="primary"
-                    icon={<CarOutlined />}
-                    onClick={() => showModal(car)}
-                    className="w-full py-3 text-lg font-semibold rounded-md transition-all duration-300 transform hover:scale-105"
+                    type="default"
+                    size="small"
+                    className="rounded-md "
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      showModal(car);
+                    }}
                   >
                     Detail
                   </Button>
-
                   <Button
-                    key="whatsapp"
-                    type="default"
+                    type="primary"
                     icon={<WhatsAppOutlined />}
-                    className="w-full py-3 text-lg font-semibold bg-green-600 text-white hover:bg-green-700 rounded-md transition-all duration-300 transform hover:scale-105"
-                    href={`https://wa.me/yourwhatsappphone?text=Saya%20tertarik%20dengan%20${car.name}`}
-                    target="_blank"
+                    size="small"
+                    className="bg-[#25D366] text-white rounded-md"
+                    onClick={() =>
+                      window.open(
+                        `https://wa.me/?text=Saya tertarik dengan ${car.name}`
+                      )
+                    }
                   >
-                    WhatsApp
+                    Hubungi via WhatsApp
                   </Button>
                 </div>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-
-        {/* Modal for displaying car details */}
-        {currentCar && (
-          <Modal
-            title={currentCar.name}
-            visible={isModalVisible}
-            onCancel={handleCancel}
-            footer={null}
-            width={800}
-            className="overflow-auto" // Tambahkan kelas untuk scroll jika konten melebihi ukuran modal
-          >
-            <div className="text-lg font-semibold">{currentCar.name}</div>
-            <div className="text-md text-gray-600">OTR: {currentCar.otr}</div>
-            <div className="text-md text-gray-600">
-              DP mulai dari: {currentCar.dp}
-            </div>
-            <p className="mt-4 text-gray-700">{currentCar.description}</p>
-            <p className="mt-2 text-gray-600">
-              <strong>Spesifikasi:</strong> {currentCar.specs}
-            </p>
-
-            <div className="mt-4">
-              <h4 className="font-semibold text-gray-800">Gambar Detail</h4>
-              <div className="grid grid-cols-2 gap-4 mt-4">
-                {currentCar.detailImages.map((image, index) => (
-                  <div key={index} className="mb-4">
-                    <img
-                      src={image}
-                      alt={`Detail ${index + 1}`}
-                      className="w-full h-auto object-cover rounded-lg"
-                    />
-                  </div>
-                ))}
               </div>
             </div>
-          </Modal>
-        )}
-      </div>
-    </section>
+          </Col>
+        ))}
+      </Row>
+
+      {/* Modal Detail Mobil */}
+      {currentCar && (
+        <Modal
+          title={<Title level={3}>{currentCar.name}</Title>}
+          visible={isModalVisible}
+          onCancel={handleCancel}
+          footer={[
+            <Button key="back" onClick={handleCancel} className="rounded-md">
+              Tutup
+            </Button>,
+            <Button
+              key="whatsapp"
+              type="primary"
+              icon={<WhatsAppOutlined />}
+              className="bg-[#25D366] text-white rounded-md"
+              onClick={() =>
+                window.open(
+                  `https://wa.me/?text=Saya tertarik dengan ${currentCar.name}`
+                )
+              }
+            >
+              WhatsApp
+            </Button>,
+          ]}
+          width="80%"
+          className="rounded-lg"
+        >
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <img
+                src={currentCar.image}
+                alt={currentCar.name}
+                className="w-full rounded-lg shadow-lg"
+              />
+            </Col>
+            <Col xs={24} sm={12}>
+              <div className="space-y-6">
+                {/* Deskripsi Mobil */}
+                <p className="text-gray-800 text-base sm:text-lg md:text-xl font-medium leading-relaxed">
+                  {currentCar.description}
+                </p>
+
+                {/* Harga OTR */}
+                <div className="flex flex-col sm:flex-row justify-between items-center bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white p-5 rounded-xl shadow-md">
+                  <p className="font-semibold text-lg sm:text-xl md:text-2xl">
+                    <strong>OTR:</strong> {currentCar.otr}
+                  </p>
+                  <div className="text-lg sm:text-xl font-medium mt-3 sm:mt-0">
+                    <span className="block text-yellow-300">
+                      Penawaran Terbaik!
+                    </span>
+                  </div>
+                </div>
+
+                {/* Harga DP */}
+                <div className="bg-yellow-100 p-5 rounded-xl shadow-md border-l-4 border-yellow-600">
+                  <p className="font-semibold text-xl sm:text-2xl text-yellow-700">
+                    <strong>DP:</strong> {currentCar.dp}
+                  </p>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-800 mt-2">
+                    Hanya dengan DP terjangkau, mobil impian Anda sudah bisa
+                    dibawa pulang!
+                  </p>
+                </div>
+              </div>
+            </Col>
+          </Row>
+
+          <div className="mt-6">
+            <Title level={4}>Gambar Detail</Title>
+            <Row gutter={[16, 16]}>
+              {currentCar.detailImages.map((img, index) => (
+                <Col key={index} xs={24} sm={8}>
+                  <img
+                    src={img}
+                    alt={`Detail ${index}`}
+                    className="w-full rounded-lg shadow-md"
+                  />
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </Modal>
+      )}
+    </div>
   );
 };
 

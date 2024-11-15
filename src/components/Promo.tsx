@@ -13,7 +13,7 @@ const Promo: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
           Promo Spesial
         </h2>
-        <p className="mt-4 text-lg md:text-xl font-light">
+        <p className="mt-4  mb-4 text-lg md:text-xl font-light">
           Dapatkan diskon hingga 20% untuk model-model Honda tertentu! Kunjungi
           kami hari ini.
         </p>

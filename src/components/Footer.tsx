@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         <Row gutter={[16, 32]}>
           {/* Info Pemesanan */}
           <Col xs={24} sm={12} md={6}>
-            <h3 className="text-xl font-semibold">INFO PEMESANAN</h3>
+            <h3 className="text-xl font-semibold">Info Pemesanan</h3>
             <p className="mt-2 text-sm">
               Silakan menghubungi kami untuk pemesanan atau pembelian mobil
               Honda Anda. Kami akan segera menghubungi Anda.
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
 
           {/* Kontak */}
           <Col xs={24} sm={12} md={6}>
-            <h4 className="text-lg font-semibold">I HUBUNGI KAMI</h4>
+            <h4 className="text-lg font-semibold">Hubungi Kami</h4>
             <p className="mt-2 text-sm">
               No. Telp/Whatsapp:{" "}
               <a href="tel:+6285365050508" className="text-blue-400">
