@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* <div className="text-2xl font-bold text-red-500">Honda</div> */}
         <div className="flex items-center">
           <img
-            src="https://images.jazelc.com/uploads/edvoyleshonda-2-m2en/hondacorplogo2.jpg" // Pastikan gambar logo berada di folder public
+            src="/honda-logo.png" // Pastikan gambar logo berada di folder public
             alt="Honda Logo"
             className="h-8" // Atur tinggi logo sesuai kebutuhan
           />

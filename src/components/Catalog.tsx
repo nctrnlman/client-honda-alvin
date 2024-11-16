@@ -154,16 +154,16 @@ const Catalog: React.FC = () => {
   };
 
   return (
-    <div className="overflow-hidden md:px-8">
+    <div className="overflow-hidden md:px-8 py-6" id="catalog">
       {/* Judul dan Subjudul */}
       <div className="text-center mb-10 my-8 px-4 sm:px-6 md:px-8">
         <Title
           level={2}
-          className="text-[#2c3e50] text-2xl sm:text-4xl md:text-4xl"
+          className="text-[#2c3e50] text-lg sm:text-2xl md:text-4xl lg:text-5xl"
         >
           Temukan Mobil Impian Anda Sekarang!
         </Title>
-        <Text className="text-sm sm:text-lg  md:text-xl text-[#7f8c8d]">
+        <Text className="text-sm sm:text-lg md:text-xl lg:text-2xl text-[#7f8c8d]">
           Dapatkan Penawaran Terbaik dengan Harga OTR Terjangkau dan DP Ringan.
           Pilih Mobil Anda dan Hubungi Kami untuk Info Lebih Lanjut!
         </Text>
@@ -265,27 +265,23 @@ const Catalog: React.FC = () => {
                 <p className="text-gray-800 text-base sm:text-lg md:text-xl font-medium leading-relaxed">
                   {currentCar.description}
                 </p>
-
                 {/* Harga OTR */}
-                <div className="flex flex-col sm:flex-row justify-between items-center bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white p-5 rounded-xl shadow-md">
-                  <p className="font-semibold text-lg sm:text-xl md:text-2xl">
+                <div className="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-red-600 mt-6 transition-transform transform hover:scale-105">
+                  {/* OTR Harga */}
+                  <p className="font-semibold text-xl sm:text-2xl md:text-3xl text-red-600">
                     <strong>OTR:</strong> {currentCar.otr}
                   </p>
-                  <div className="text-lg sm:text-xl font-medium mt-3 sm:mt-0">
-                    <span className="block text-yellow-300">
-                      Penawaran Terbaik!
-                    </span>
-                  </div>
                 </div>
 
                 {/* Harga DP */}
-                <div className="bg-yellow-100 p-5 rounded-xl shadow-md border-l-4 border-yellow-600">
-                  <p className="font-semibold text-xl sm:text-2xl text-yellow-700">
+                <div className="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-red-600 mt-6 transition-transform transform hover:scale-105">
+                  <p className="font-semibold text-2xl sm:text-3xl text-red-600">
                     <strong>DP:</strong> {currentCar.dp}
                   </p>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-800 mt-2">
-                    Hanya dengan DP terjangkau, mobil impian Anda sudah bisa
-                    dibawa pulang!
+                  <p className="text-sm sm:text-base text-gray-700 mt-3">
+                    Dapatkan mobil impian Anda hanya dengan{" "}
+                    <strong>DP terjangkau</strong>! Segera hubungi kami untuk
+                    lebih lanjut.
                   </p>
                 </div>
               </div>
