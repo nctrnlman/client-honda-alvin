@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "Saya, Alvian Deandra, adalah sales resmi Honda yang siap membantu Anda menemukan mobil impian dengan penawaran spesial dan layanan terbaik.",
   keywords:
     "Sales mobil Honda, Promo mobil Honda, Mobil keluarga Honda, Dealer resmi Honda, Honda Bandung",
-  authors: "Rhazes",
+  authors: [{ name: "Rhazes" }],
   openGraph: {
     title: "⁠Alvian Deandra - Sales Resmi Mobil Honda",
     description:
