@@ -5,12 +5,12 @@ import { Modal, Button, Typography, Row, Col } from "antd";
 
 interface Car {
   name: string;
-  otr: string; // Harga OTR
-  dp: string; // Harga Down Payment
+  otr: string;
+  dp: string;
   image: string;
   description: string;
   specs: string;
-  detailImages: string[]; // Array untuk beberapa gambar mobil
+  detailImages: string[];
 }
 
 const { Title, Text } = Typography;
@@ -39,21 +39,36 @@ const Catalog: React.FC = () => {
       name: "Honda Accord",
       otr: "Rp 450.000.000",
       dp: "Rp 60.000.000",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+      image: "/cars/accord/primary.jpeg",
       description:
         "Honda Accord adalah sedan ukuran sedang yang dikenal dengan performa, interior luas, dan fitur modern.",
       specs: "Mesin: 1.5L Turbo, Daya: 192 hp, Transmisi: CVT",
       detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+        "/cars/accord/1.jpeg",
+        "/cars/accord/2.jpeg",
+        "/cars/accord/3.jpeg",
+        "/cars/accord/4.jpeg",
       ],
     },
     {
-      name: "Honda CR-V",
+      name: "Honda BR-V",
       otr: "Rp 550.000.000",
       dp: "Rp 70.000.000",
+      image: "/cars/brv/primary.jpeg",
+      description:
+        "Honda CR-V adalah SUV kompak dengan ruang kargo yang luas dan sistem bantuan pengemudi canggih.",
+      specs: "Mesin: 1.5L Turbo, Daya: 190 hp, Transmisi: CVT",
+      detailImages: [
+        "/cars/brv/1.jpeg",
+        "/cars/brv/2.jpeg",
+        "/cars/brv/3.jpeg",
+        "/cars/brv/4.jpeg",
+      ],
+    },
+    {
+      name: "Honda WR-V",
+      otr: "4.8 Juta",
+      dp: "33 Juta",
       image:
         "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
       description:
@@ -67,8 +82,8 @@ const Catalog: React.FC = () => {
     },
     {
       name: "Honda HR-V",
-      otr: "Rp 350.000.000",
-      dp: "Rp 50.000.000",
+      otr: "6.6 Jutaan",
+      dp: "36 Juta",
       image:
         "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
       description:
@@ -82,10 +97,9 @@ const Catalog: React.FC = () => {
     },
     {
       name: "Honda Brio",
-      otr: "Rp 200.000.000",
-      dp: "Rp 30.000.000",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+      otr: "3.4 Jutaan",
+      dp: "21 Juta",
+      image: "/cars/brio/primary.jpeg",
       description:
         "Honda Brio adalah mobil subkompak yang sangat efisien bahan bakar, ideal untuk penggunaan sehari-hari di perkotaan.",
       specs: "Mesin: 1.2L, Daya: 90 hp, Transmisi: CVT",
@@ -96,7 +110,7 @@ const Catalog: React.FC = () => {
       ],
     },
     {
-      name: "Honda Mobilio",
+      name: "Honda City",
       otr: "Rp 250.000.000",
       dp: "Rp 35.000.000",
       image:
@@ -104,36 +118,6 @@ const Catalog: React.FC = () => {
       description:
         "Honda Mobilio adalah MPV yang menawarkan ruang kabin luas dan efisiensi bahan bakar yang sangat baik.",
       specs: "Mesin: 1.5L, Daya: 118 hp, Transmisi: CVT",
-      detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-      ],
-    },
-    {
-      name: "Honda Pilot",
-      otr: "Rp 700.000.000",
-      dp: "Rp 100.000.000",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-      description:
-        "Honda Pilot adalah SUV tiga baris yang menawarkan ruang luas untuk penumpang dan bagasi.",
-      specs: "Mesin: 3.5L V6, Daya: 280 hp, Transmisi: 9-speed Otomatis",
-      detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-      ],
-    },
-    {
-      name: "Honda Odyssey",
-      otr: "Rp 650.000.000",
-      dp: "Rp 90.000.000",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-      description:
-        "Honda Odyssey adalah MPV premium dengan interior luas dan fitur-fitur canggih.",
-      specs: "Mesin: 3.5L V6, Daya: 280 hp, Transmisi: 9-speed Otomatis",
       detailImages: [
         "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
         "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
@@ -186,12 +170,12 @@ const Catalog: React.FC = () => {
                 <Title level={4} className="text-lg mb-2">
                   {car.name}
                 </Title>
-                <Text strong className="text-red-600 text-md">
-                  {`OTR ${car.otr}`}
-                </Text>
                 <div className="mt-2 text-gray-500">
                   <Text className="text-sm">{`DP mulai dari ${car.dp}`}</Text>
                 </div>
+                <Text strong className="text-red-600 text-md">
+                  {`Angsuran ${car.otr}`}
+                </Text>
                 <div className="mt-4 flex flex-col md:flex-row gap-2 justify-center">
                   <Button
                     type="default"

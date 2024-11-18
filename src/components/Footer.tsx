@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           <Col xs={24} sm={12} md={6}>
             <h4 className="text-lg font-semibold">Honda Bandung</h4>
             <p className="mt-2 text-sm">
-              Jl. Bandung No. 12, Bandung, Jawa Barat
+              Honda Autobest Jl Soekarno Hatta No 517 Bandung
             </p>
           </Col>
 
@@ -34,14 +34,17 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold">Hubungi Kami</h4>
             <p className="mt-2 text-sm">
               No. Telp/Whatsapp:{" "}
-              <a href="tel:+6285365050508" className="text-blue-400">
-                081221431716
+              <a href="tel:+6282240478316" className="text-blue-400">
+                082240478316
               </a>
             </p>
             <p className="mt-2 text-sm">
               Email:{" "}
-              <a href="mailto:rhazesd@gmail.com" className="text-blue-400">
-                rhazesd@gmail.com
+              <a
+                href="mailto:alviandeandra920@gmail.com"
+                className="text-blue-400"
+              >
+                alviandeandra920@gmail.com
               </a>
             </p>
           </Col>
@@ -54,36 +57,21 @@ const Footer: React.FC = () => {
             className="flex justify-center flex-wrap gap-6 mt-8 md:mt-0"
           >
             <a
-              href="https://wa.me/085365050508"
+              href="https://wa.me/6282240478316"
               target="_blank"
               rel="noopener noreferrer"
               className="text-3xl hover:text-green-500 transition-colors duration-300"
             >
               <WhatsAppOutlined />
             </a>
+
             <a
-              href="https://www.facebook.com/hondaindonesia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:text-blue-600 transition-colors duration-300"
-            >
-              <FacebookOutlined />
-            </a>
-            <a
-              href="https://www.instagram.com/honda_id"
+              href="https://www.instagram.com/alvin_honda12/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-3xl hover:text-pink-500 transition-colors duration-300"
             >
               <InstagramOutlined />
-            </a>
-            <a
-              href="https://twitter.com/HondaID"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-3xl hover:text-blue-400 transition-colors duration-300"
-            >
-              <TwitterOutlined />
             </a>
           </Col>
         </Row>

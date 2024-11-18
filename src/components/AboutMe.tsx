@@ -50,14 +50,17 @@ const AboutMe = () => {
             >
               <Avatar
                 size={200}
-                src="https://media.licdn.com/dms/image/v2/D5603AQH0ONJySq15Cw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718307681187?e=2147483647&v=beta&t=RraRN1-_wzd0ORN1wh2o1sYinuC31lyFVVryvfKaSzk" // Replace with your image
+                src="/profiles/alvin.jpeg" // Replace with your image
                 className="mb-6 border-4 border-red-500 shadow-md transform hover:rotate-6 transition-transform duration-300"
               />
-              <h3 className="text-3xl font-bold mb-2">Rhazes Devino</h3>
+              <h3 className="text-3xl font-bold mb-2">⁠Alvian deandra </h3>
               <p className="text-lg text-gray-700 mb-4 text-center italic">
-                Konsultan Penjualan Honda | Membantu Anda menemukan mobil impian
+                Sales consultan
               </p>
-              <Button className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg shadow-md transition-transform transform hover:scale-110">
+              <Button
+                onClick={() => window.open("tel:082240478316", "_blank")}
+                className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg shadow-md transition-transform transform hover:scale-110"
+              >
                 Hubungi Saya
               </Button>
             </div>
@@ -73,28 +76,28 @@ const AboutMe = () => {
               <h2 className="text-3xl font-bold text-black mb-6">
                 Kenapa Harus Pilih Saya untuk Mobil Honda Anda?
               </h2>
-              <p className="text-lg text-gray-800 mb-6 leading-relaxed">
-                Dengan lebih dari <strong>5 tahun pengalaman</strong>, saya
-                adalah ahli dalam membantu Anda menemukan mobil Honda impian
-                Anda. Tidak perlu bingung atau repot! Saya siap memberikan
-                solusi terbaik untuk kebutuhan dan anggaran Anda. Baik Anda
-                mencari <strong>sedan yang stylish</strong>,{" "}
-                <strong>SUV yang kokoh</strong>, atau
-                <strong>mobil keluarga yang nyaman</strong>, saya jamin Anda
-                mendapatkan mobil dengan kualitas terbaik dan harga yang
-                kompetitif.
+              <p className="text-lg text-gray-800 mb-6 leading-relaxed text-justify">
+                Dengan <strong>pengalaman lebih dari 5 tahun</strong>, saya
+                memiliki keahlian untuk membantu Anda menemukan mobil Honda yang
+                paling cocok untuk kebutuhan harian Anda. Tidak hanya sekadar
+                menjual, saya akan membantu Anda memahami keunggulan setiap
+                model, sehingga Anda dapat memilih kendaraan yang sesuai dengan
+                gaya hidup dan anggaran Anda. saya siap memberikan solusi
+                terbaik.
               </p>
-              <p className="text-lg text-gray-800 mb-6 leading-relaxed">
-                <strong>
-                  Jangan buang waktu dengan penawaran biasa-biasa saja!
-                </strong>{" "}
-                Pilih layanan saya untuk pengalaman membeli mobil yang cepat,
-                mudah, dan memuaskan. Mobil Honda Anda hanya selangkah lagi –{" "}
-                <span className="text-red-600 font-bold">
-                  hubungi saya sekarang
+
+              <p className="text-lg text-gray-800 mb-6 leading-relaxed text-justify">
+                <strong>Percayakan kebutuhan mobil Anda kepada saya</strong>,
+                karena saya tidak hanya menawarkan produk, tetapi juga panduan
+                yang personal dan mendetail.
+                <span className="text-red-600 font-bold px-1">
+                  Hubungi saya sekarang
                 </span>
-                , dan nikmati <strong>penawaran spesial</strong> serta
-                <strong>diskon eksklusif</strong> untuk Anda hari ini!
+                untuk mendapatkan <strong>penawaran spesial</strong>,
+                <strong>diskon eksklusif</strong>, dan informasi yang tepat
+                tentang mobil Honda idaman Anda. Bersama saya, proses membeli
+                mobil Honda akan menjadi pengalaman yang mudah, cepat, dan
+                memuaskan!
               </p>
 
               {/* Call-to-Action Buttons */}
@@ -102,24 +105,37 @@ const AboutMe = () => {
                 <Button
                   className="bg-red-600 hover:bg-red-700 text-white py-3 px-8 rounded-lg font-semibold shadow-md transition-transform transform hover:scale-110"
                   icon={<PhoneOutlined />}
+                  onClick={() => window.open("tel:082240478316", "_blank")}
                 >
                   Telepon
                 </Button>
                 <Button
                   className="bg-green-600 hover:bg-green-700 text-white py-3 px-8 rounded-lg font-semibold shadow-md transition-transform transform hover:scale-110"
                   icon={<WhatsAppOutlined />}
+                  onClick={() =>
+                    window.open("https://wa.me/6282240478316", "_blank")
+                  }
                 >
                   WhatsApp
                 </Button>
                 <Button
                   className="bg-gray-600 hover:bg-gray-700 text-white py-3 px-8 rounded-lg font-semibold shadow-md transition-transform transform hover:scale-110"
                   icon={<MailOutlined />}
+                  onClick={() =>
+                    (window.location.href = "mailto:alviandeandra920@gmail.com")
+                  }
                 >
                   Email
                 </Button>
                 <Button
                   className="bg-pink-500 hover:bg-pink-600 text-white py-3 px-8 rounded-lg font-semibold shadow-md transition-transform transform hover:scale-110"
                   icon={<InstagramOutlined />}
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/alvin_honda12/",
+                      "_blank"
+                    )
+                  }
                 >
                   Instagram
                 </Button>

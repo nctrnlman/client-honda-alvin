@@ -1,10 +1,5 @@
 const Promo: React.FC = () => {
-  const promoImages = [
-    "https://www.honda-bintaro.com/wp-content/uploads/2020/04/Promo-April-2020-small-min.jpg",
-    "https://www.officialhondabekasi.com/wp-content/uploads/2020/01/Promo-Terbaru-Honda-.jpg",
-    "https://honda-bogor.id/wp-content/uploads/2024/01/qCd67YaZeNMXWiGue2fgbiqpGG9s16ULjhzdDWh4.jpg",
-    "https://www.honda-bandung.com/wp-content/uploads/2024/07/Promo-Honda-Bandung-Juli-2024-930x620.webp",
-  ];
+  const promoImages = ["/promo/1.jpeg", "/promo/2.jpeg", "/promo/3.jpeg"];
 
   return (
     <section
