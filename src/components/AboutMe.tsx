@@ -4,13 +4,11 @@ import {
   PhoneOutlined,
   MailOutlined,
   InstagramOutlined,
-  TwitterOutlined,
   WhatsAppOutlined,
 } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 
 const AboutMe = () => {
-  // Scroll animation state
   const [isVisible, setIsVisible] = useState(false);
 
   const handleScroll = () => {
@@ -50,7 +48,8 @@ const AboutMe = () => {
             >
               <Avatar
                 size={200}
-                src="/profiles/alvin.jpeg" // Replace with your image
+                src="/profiles/alvin.jpeg"
+                alt="profile"
                 className="mb-6 border-4 border-red-500 shadow-md transform hover:rotate-6 transition-transform duration-300"
               />
               <h3 className="text-3xl font-bold mb-2">⁠Alvian deandra </h3>

@@ -4,11 +4,11 @@ import {
   HomeOutlined,
   InfoCircleOutlined,
   CarOutlined,
-  TagsOutlined,
   MenuOutlined,
   GiftOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, Button, Drawer } from "antd";
+import Image from "next/image";
 import { useState } from "react";
 const { Header } = Layout;
 
@@ -25,10 +25,12 @@ const Navbar = () => {
         {/* Logo */}
         {/* <div className="text-2xl font-bold text-red-500">Honda</div> */}
         <div className="flex items-center">
-          <img
-            src="/honda-logo.png" // Pastikan gambar logo berada di folder public
+          <Image
+            src="/honda-logo.png"
             alt="Honda Logo"
-            className="h-8" // Atur tinggi logo sesuai kebutuhan
+            width={150} // Tentukan lebar gambar yang sesuai
+            height={50} // Tentukan tinggi gambar yang sesuai
+            className="h-auto w-auto" // Gambar akan responsif berdasarkan ukuran asli
           />
         </div>
         {/* Desktop Navbar */}

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { WhatsAppOutlined } from "@ant-design/icons";
+import { DownloadOutlined, WhatsAppOutlined } from "@ant-design/icons";
 import { Modal, Button, Typography, Row, Col } from "antd";
 
 interface Car {
@@ -22,23 +22,23 @@ const Catalog: React.FC = () => {
   const cars: Car[] = [
     {
       name: "Honda Civic",
-      otr: "Rp 320.000.000",
-      dp: "Rp 45.000.000",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+      otr: "6 Juta",
+      dp: "61 Juta",
+      image: "/cars/civic/primary.jpeg",
       description:
         "Honda Civic adalah sedan kompak dengan efisiensi bahan bakar yang sangat baik dan fitur keselamatan canggih.",
       specs: "Mesin: 2.0L, Daya: 158 hp, Transmisi: CVT",
       detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+        "/cars/civic/1.jpeg",
+        "/cars/civic/2.jpeg",
+        "/cars/civic/3.jpeg",
+        "/cars/civic/4.jpeg",
       ],
     },
     {
       name: "Honda Accord",
-      otr: "Rp 450.000.000",
-      dp: "Rp 60.000.000",
+      otr: "6.8 Juta",
+      dp: "95 Juta",
       image: "/cars/accord/primary.jpeg",
       description:
         "Honda Accord adalah sedan ukuran sedang yang dikenal dengan performa, interior luas, dan fitur modern.",
@@ -52,11 +52,11 @@ const Catalog: React.FC = () => {
     },
     {
       name: "Honda BR-V",
-      otr: "Rp 550.000.000",
-      dp: "Rp 70.000.000",
+      otr: "4.8 Juta",
+      dp: "25 Juta",
       image: "/cars/brv/primary.jpeg",
       description:
-        "Honda CR-V adalah SUV kompak dengan ruang kargo yang luas dan sistem bantuan pengemudi canggih.",
+        "SUV crossover yang dirancang untuk petualangan keluarga. Dengan kapasitas 7 penumpang dan fitur keselamatan canggih, BR-V menawarkan kenyamanan dan keamanan untuk perjalanan jauh maupun aktivitas harian",
       specs: "Mesin: 1.5L Turbo, Daya: 190 hp, Transmisi: CVT",
       detailImages: [
         "/cars/brv/1.jpeg",
@@ -69,31 +69,26 @@ const Catalog: React.FC = () => {
       name: "Honda WR-V",
       otr: "4.8 Juta",
       dp: "33 Juta",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+      image: "/cars/wrv/primary.jpeg",
       description:
-        "Honda CR-V adalah SUV kompak dengan ruang kargo yang luas dan sistem bantuan pengemudi canggih.",
+        "SUV kompak yang dirancang untuk gaya hidup dinamis dan mobilitas perkotaan. Dengan desain sporty dan efisiensi bahan bakar yang baik, WR-V memberikan pengalaman berkendara yang nyaman dan serbaguna.",
       specs: "Mesin: 1.5L Turbo, Daya: 190 hp, Transmisi: CVT",
       detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+        "/cars/wrv/1.jpeg",
+        "/cars/wrv/2.jpeg",
+        "/cars/wrv/3.jpeg",
+        "/cars/wrv/6.jpeg",
       ],
     },
     {
       name: "Honda HR-V",
       otr: "6.6 Jutaan",
       dp: "36 Juta",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+      image: "/cars/hrv/primary.jpg",
       description:
         "Honda HR-V adalah crossover kompak yang menawarkan kenyamanan dan efisiensi bahan bakar yang luar biasa.",
       specs: "Mesin: 1.8L, Daya: 141 hp, Transmisi: CVT",
-      detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-      ],
+      detailImages: ["/cars/hrv/1.png", "/cars/hrv/2.jpg"],
     },
     {
       name: "Honda Brio",
@@ -104,24 +99,24 @@ const Catalog: React.FC = () => {
         "Honda Brio adalah mobil subkompak yang sangat efisien bahan bakar, ideal untuk penggunaan sehari-hari di perkotaan.",
       specs: "Mesin: 1.2L, Daya: 90 hp, Transmisi: CVT",
       detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+        "/cars/brio/1.jpeg",
+        "/cars/brio/2.jpeg",
+        "/cars/brio/3.jpeg",
+        "/cars/brio/4.jpeg",
       ],
     },
     {
       name: "Honda City",
-      otr: "Rp 250.000.000",
-      dp: "Rp 35.000.000",
-      image:
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+      otr: "6.8 Juta",
+      dp: "28 Juta",
+      image: "/cars/city/primary.jpeg",
       description:
-        "Honda Mobilio adalah MPV yang menawarkan ruang kabin luas dan efisiensi bahan bakar yang sangat baik.",
+        "Honda City adalah sedan kompak yang menawarkan kombinasi sempurna antara performa, kenyamanan, dan efisiensi. Dengan desain elegan dan fitur modern, Honda City cocok untuk pengemudi perkotaan maupun perjalanan jarak jauh.",
       specs: "Mesin: 1.5L, Daya: 118 hp, Transmisi: CVT",
       detailImages: [
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
-        "https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg",
+        "/cars/city/1.jpeg",
+        "/cars/city/2.jpeg",
+        "/cars/city/3.jpeg",
       ],
     },
   ];
@@ -195,7 +190,8 @@ const Catalog: React.FC = () => {
                     className="bg-[#25D366] text-white rounded-md"
                     onClick={() =>
                       window.open(
-                        `https://wa.me/?text=Saya tertarik dengan ${car.name}`
+                        `https://wa.me/6282240478316?text=Saya tertarik dengan ${car.name}`,
+                        "_blank"
                       )
                     }
                   >
@@ -207,6 +203,24 @@ const Catalog: React.FC = () => {
           </Col>
         ))}
       </Row>
+      <div className="text-center px-4 sm:px-6 md:px-8 mt-8">
+        <Button
+          type="primary"
+          icon={<DownloadOutlined />}
+          size="large"
+          className="bg-red-500 text-white rounded-md hover:bg-red-800"
+          onClick={(e) => {
+            e.stopPropagation();
+            window.open(`/catalog.pdf`);
+          }}
+        >
+          Dapatkan Daftar Harga Lengkap Sekarang!
+        </Button>
+        <p className="mt-4  text-gray-600">
+          Klik tombol di atas untuk mengunduh dan mulai wujudkan mobil impian
+          Anda hari ini!
+        </p>
+      </div>
 
       {/* Modal Detail Mobil */}
       {currentCar && (
@@ -225,7 +239,8 @@ const Catalog: React.FC = () => {
               className="bg-[#25D366] text-white rounded-md"
               onClick={() =>
                 window.open(
-                  `https://wa.me/?text=Saya tertarik dengan ${currentCar.name}`
+                  `https://wa.me/6282240478316?text=Saya tertarik dengan ${currentCar.name}`,
+                  "_blank"
                 )
               }
             >

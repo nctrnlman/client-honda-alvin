@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 const HeroSection: React.FC = () => {
-  // Menambahkan efek smooth scroll pada dokumen
   useEffect(() => {
     if (typeof window !== "undefined") {
       document.documentElement.style.scrollBehavior = "smooth";
@@ -18,12 +17,11 @@ const HeroSection: React.FC = () => {
         {/* Slide 1 */}
         <div className="relative w-full h-screen">
           <Image
-            src="https://cdn.motor1.com/images/mgl/vxZ1mG/s3/2025-honda-civic-rs-jdm.jpg"
+            src="/hero1.jpg"
             alt="Mobil Honda 1"
-            layout="fill" // Mengisi penuh container secara responsif
-            objectFit="cover" // Menjaga aspek rasio dan mengisi container
-            className="w-full h-full"
-            priority // Memuat gambar pertama dengan prioritas tinggi
+            fill
+            className="w-full h-full object-cover" // Menggunakan class CSS untuk menjaga rasio gambar
+            priority
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -32,11 +30,10 @@ const HeroSection: React.FC = () => {
         {/* Slide 2 */}
         <div className="relative w-full h-screen">
           <Image
-            src="https://di-uploads-pod1.dealerinspire.com/saffordbrownhondaarlington/uploads/2023/12/ezgif.com-avif-to-jpg-converted-2.jpg"
+            src="/hero2.webp"
             alt="Mobil Honda 2"
-            layout="fill"
-            objectFit="cover"
-            className="w-full h-full"
+            fill
+            className="w-full h-full object-cover" // Menggunakan class CSS untuk menjaga rasio gambar
           />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>

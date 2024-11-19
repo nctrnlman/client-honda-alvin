@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://client-honda-alvin.vercel.app
+
+# Sitemaps
+Sitemap: https://client-honda-alvin.vercel.app/sitemap.xml

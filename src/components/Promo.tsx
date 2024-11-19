@@ -44,7 +44,11 @@ const Promo: React.FC = () => {
 
         {/* Call-to-Action */}
         <div className="mt-12">
-          <a href="#contact">
+          <a
+            href={`https://wa.me/6282240478316`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="bg-black hover:bg-red-600 text-white font-semibold py-3 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-50">
               Hubungi Kami Sekarang!
             </button>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// Mengimpor font lokal
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -14,7 +13,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// Metadata untuk SEO
 export const metadata: Metadata = {
   title: "⁠Alvian Deandra - Sales Resmi Mobil Honda",
   description:
@@ -30,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Sales Honda - Alvian Deandra",
     images: [
       {
-        url: "https://client-honda-alvin.vercel.app/profile-photo.jpg", // Gantilah dengan gambar profil yang sesuai
+        url: "https://client-honda-alvin.vercel.app/profile-photo.jpg",
         width: 800,
         height: 800,
         alt: "⁠Alvian Deandra - Sales Resmi Honda",
@@ -43,7 +41,7 @@ export const metadata: Metadata = {
     title: "⁠Alvian Deandra - Sales Resmi Mobil Honda",
     description:
       "Beli mobil Honda impian Anda dengan mudah dan cepat bersama saya, Alvian Deandra, sales resmi Honda.",
-    images: ["https://client-honda-alvin.vercel.app/twitter-image.jpg"], // Gantilah dengan gambar Twitter yang sesuai
+    images: ["https://client-honda-alvin.vercel.app/twitter-image.jpg"],
   },
 };
 
@@ -55,11 +53,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Meta tags untuk SEO dan pengaturan dasar */}
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {/* Metadata umum */}
         <meta name="author" content="Alvian Deandra" />
         <meta name="keywords" content="Sales mobil Honda, Honda, Promo Honda" />
         <meta
@@ -100,19 +96,16 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content="https://client-honda-alvin.vercel.app/twitter-image.jpg" // Gambar yang tampil di Twitter
+          content="https://client-honda-alvin.vercel.app/twitter-image.jpg"
         />
 
-        {/* Favicon */}
         <link
           rel="icon"
-          href="https://client-honda-alvin.vercel.app/honda-logo.png" // Gambar favicon
+          href="https://client-honda-alvin.vercel.app/honda-logo.png"
         />
 
-        {/* Canonical URL */}
         <link rel="canonical" href="https://client-honda-alvin.vercel.app" />
 
-        {/* Pengaturan tema untuk mobile */}
         <meta name="theme-color" content="#FF0000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
